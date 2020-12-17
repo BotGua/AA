@@ -129,7 +129,7 @@ const client = new WAConnection()
 
 client.on('qr', qr => {
    qrcode.generate(qr, { small: true })
-   console.log(`[ ${time} ] QR code is ready, subscribe Aris187 ID`)
+   console.log(`[ ${time} ] QR code is ready`)
 })
 
 client.on('credentials-updated', () => {
@@ -143,11 +143,11 @@ fs.existsSync('./session.json') && client.loadAuthInfo('./session.json')
 
 client.connect();
 
-// client.on('user-presence-update', json => console.log(json.id + ' presence is => ' + json.type)) || console.log(`${time}: Bot by ig:@_sadboy.ig`)
+// client.on('user-presence-update', json => console.log(json.id + ' presence is => ' + json.type)) || console.log(`${time}: Bot by ig:@kamaadoo_tanjiroo`)
 
 client.on('message-status-update', json => {
    const participant = json.participant ? ' (' + json.participant + ')' : ''
-   console.log(`[ ${time} ] => bot by ig:@_sadboy.ig`)
+   console.log(`[ ${time} ] => bot by ig:@kamaadoo_tanjiroo`)
 })
 
 client.on('message-new', async (m) => {
